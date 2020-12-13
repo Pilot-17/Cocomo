@@ -20,8 +20,8 @@ export const Nav = () => {
         </Link>
       </Item>
 
-      <Item key="/calc1">
-        <Link to="/calc1">
+      <Item key="/calcbasic">
+        <Link to="/calcbasic">
           <CalculatorOutlined />
           Basic COCOMO
         </Link>
@@ -37,7 +37,15 @@ export const Nav = () => {
       <Item key="/calc3">
         <Link to="/calc3">
           <CalculatorOutlined />
-          Advanced COCOMO
+          COCOMOII(предварительная оценка)
+        </Link>
+      </Item>
+
+
+      <Item key="/calc4">
+        <Link to="/calc4">
+          <CalculatorOutlined />
+          COCOMOII(детальная оценка)
         </Link>
       </Item>
 

@@ -44,8 +44,6 @@ export const Cocomo = () => {
       </InputContainer>
       <hr />
 
-      <Result team={team} KLoC={KLoC} />
-      <hr />
       <HideBar>
         <Panel header="Таблица коэффициентов" key="1">
           <CoefficientTable />
