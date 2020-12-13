@@ -1,5 +1,3 @@
-## This is code for the [Online COCOMO Calculator](https://cocomo.now.sh/)
-
 It is a static web-application, builded whith React and Typescript.
 
 ### `yarn start`
