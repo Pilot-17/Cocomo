@@ -5,7 +5,8 @@ import {
   Embedded,
   costDrivers
 } from "cocomo";
-import { ratingFactor } from "./interface";
+import { createModuleResolutionCache } from "typescript";
+import { costDriversCocomo2, ratingFactor, ratingFactorCocomo2 } from "./interface";
 
 // Базовые уравнения COCOMO:
 
@@ -71,3 +72,38 @@ export const calculateIntermediateCocomo = (
 };
 
 const Multiply = (total: number, value: number) => total * value;
+
+
+// Cocomo2
+
+export const calculateCocomo2 = (
+  KLoC: number,
+  drivers: ratingFactorCocomo2
+) => {
+
+  const values = Object.entries(drivers).map(
+    ([key, value]) => costDriversCocomo2[key][value-1]
+  );
+
+  // const values1 = drivers7.map(
+  //   ([key, value]) => costDriversCocomo2[key][value-1]
+  // );
+
+  const RFT: number = values.slice(0, 7).reduce(Multiply, 1);
+
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  const SF: number = values.slice(7).reduce(reducer);
+  console.log(SF)
+
+  const SIZE = KLoC
+
+  const A = 2.94
+  const E = 0.91 + (0.01 * SF)
+  const EAF = RFT
+
+  const PM = EAF*A*(Math.pow(SIZE,E))
+  // console.log(Math.pow(SIZE,E))
+  // console.log(SIZE)
+  // console.log(E)
+  return PM
+};

@@ -2,36 +2,21 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Collapse, InputNumber, Select } from "antd";
 import { IntermediateCocomo, CoefficientTable, Result } from "cocomo";
+import { CocomoCalc2 } from "cocomo/components/CocomoCalc2";
 
 const { Panel } = Collapse;
 const { Option } = Select;
 
-type Team = "organic" | "semidetach" | "embedded";
-export const Cocomo = () => {
+export const Cocomo2 = () => {
   document.title = "Калькулятор COCOMO";
 
-  const [team, setTeam] = useState<Team>("organic");
   const [KLoC, setKLoC] = useState(0);
-  const handleSelect = (newValue: Team) => setTeam(newValue);
 
   return (
     <Wrapper>
       <InputContainer>
         <label>
-          тип проекта
-          <Select
-            style={{ margin: "12px", width: "200px" }}
-            value={team}
-            onChange={handleSelect}
-            size="large"
-          >
-            <Option value="organic">распространенный</Option>
-            <Option value="semidetach">полунезависимый</Option>
-            <Option value="embedded">встроенный</Option>
-          </Select>
-        </label>
-        <label>
-          и нам нужно написать
+          нам нужно написать
           <InputNumber
             value={KLoC}
             onChange={(num) => setKLoC(Number(num))}
@@ -43,15 +28,8 @@ export const Cocomo = () => {
       </InputContainer>
       <hr />
 
-      <HideBar>
-        <Panel header="Таблица коэффициентов" key="1">
-          <CoefficientTable />
-        </Panel>
-      </HideBar>
-
-      <hr />
-
-      <IntermediateCocomo team={team} KLoC={KLoC} />
+      <CocomoCalc2 KLoC={KLoC} />
+      
     </Wrapper>
   );
 };

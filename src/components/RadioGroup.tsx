@@ -9,6 +9,14 @@ interface RadioGroupProps {
   group: string;
   title: string;
 }
+
+interface RadioGroupProps2 {
+  selectRadio: (driver: string, newValue: number) => void;
+  value: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  radioValues: number[];
+  group: string;
+  title: string;
+}
 export const RadioGroup: React.FC<RadioGroupProps> = ({
   value,
   selectRadio,
@@ -65,6 +73,70 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
   </>
 );
 
+export const RadioGroupCocomo2: React.FC<RadioGroupProps2> = ({
+  value,
+  selectRadio,
+  radioValues,
+  group,
+  title
+}) => (
+  <>
+    <Title>{title}</Title>
+    <GridCocomo2>
+      <Cell
+        value={value}
+        selectRadio={selectRadio}
+        cellValue={radioValues[0]}
+        group={group}
+        index={1}
+      />
+      <Cell
+        value={value}
+        selectRadio={selectRadio}
+        cellValue={radioValues[1]}
+        group={group}
+        index={2}
+      />
+      <Cell
+        value={value}
+        selectRadio={selectRadio}
+        cellValue={radioValues[2]}
+        group={group}
+        index={3}
+      />
+      <Cell
+        value={value}
+        selectRadio={selectRadio}
+        cellValue={radioValues[3]}
+        group={group}
+        index={4}
+      />
+      <Cell
+        value={value}
+        selectRadio={selectRadio}
+        cellValue={radioValues[4]}
+        group={group}
+        index={5}
+      />
+      <Cell
+        value={value}
+        selectRadio={selectRadio}
+        cellValue={radioValues[5]}
+        group={group}
+        index={6}
+      />
+
+<Cell
+        value={value}
+        selectRadio={selectRadio}
+        cellValue={radioValues[6]}
+        group={group}
+        index={7}
+      />
+    </GridCocomo2>
+  </>
+);
+
 const Title = styled.header`
   align-items: center;
   display: flex;
@@ -86,4 +158,10 @@ const Grid = styled.div`
   display: grid;
   grid-gap: 12px;
   grid-template-columns: repeat(6, 1fr);
+`;
+
+const GridCocomo2 = styled.div`
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(7, 1fr);
 `;

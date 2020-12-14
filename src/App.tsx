@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { About, Cocomo, NoResult } from "pages";
 import { Nav } from "./components/Nav";
 import { CocomoBasic } from "pages/CocomoBasic";
+import { Cocomo2 } from "pages/Cocomo2";
 
 export const App = () => (
   <Router>
@@ -16,6 +17,9 @@ export const App = () => (
       </Route>
       <Route exact path="/calc">
         <Cocomo />
+      </Route>
+      <Route exact path="/calc3">
+        <Cocomo2 />
       </Route>
       <Route path="*">
         <NoResult />
