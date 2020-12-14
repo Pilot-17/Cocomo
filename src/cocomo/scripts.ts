@@ -6,7 +6,7 @@ import {
   costDrivers
 } from "cocomo";
 import { createModuleResolutionCache } from "typescript";
-import { costDriversCocomo2, ratingFactor, ratingFactorCocomo2 } from "./interface";
+import { costDriversCocomo2, costDriversCocomo2Advance, ratingFactor, ratingFactorCocomo2, ratingFactorCocomo2Advance } from "./interface";
 
 // Базовые уравнения COCOMO:
 
@@ -85,10 +85,9 @@ export const calculateCocomo2 = (
     ([key, value]) => costDriversCocomo2[key][value-1]
   );
 
-  // const values1 = drivers7.map(
-  //   ([key, value]) => costDriversCocomo2[key][value-1]
-  // );
-
+  console.log(drivers)
+  console.log(values)
+  
   const RFT: number = values.slice(0, 7).reduce(Multiply, 1);
 
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -105,5 +104,33 @@ export const calculateCocomo2 = (
   // console.log(Math.pow(SIZE,E))
   // console.log(SIZE)
   // console.log(E)
+  return PM
+};
+
+export const calculateCocomo2Advance = (
+  KLoC: number,
+  drivers: ratingFactorCocomo2Advance
+) => {
+
+  const values1 = Object.entries(drivers).map(
+    ([key, value]) => costDriversCocomo2Advance[key][value-1]
+  );
+  console.log(drivers)
+  console.log(values1)
+
+  const RFT: number = values1.slice(0, 17).reduce(Multiply, 1);
+
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  const SF: number = values1.slice(17).reduce(reducer);
+  console.log(SF)
+
+  const SIZE = KLoC
+
+  const A = 2.45
+  const E = 0.91 + (0.01 * SF)
+  const EAF = RFT
+
+  const PM = EAF*A*(Math.pow(SIZE,E))
+
   return PM
 };

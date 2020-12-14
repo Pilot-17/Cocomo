@@ -23,7 +23,8 @@ export const Cell: React.FC<CellProps> = ({
       onChange={() => selectRadio(group, index)}
       name={group}
     />
-    <span className="cellLabel">{cellValue || "-"}</span>
+    {/* <span className="cellLabel">{cellValue || "-"}</span> */}
+    <span className="cellLabel">{cellValue}</span>
   </Container>
 );
 
