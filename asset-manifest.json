@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Cocomo/static/css/main.d7f82884.chunk.css",
+    "main.js": "/Cocomo/static/js/main.1b83be54.chunk.js",
+    "main.js.map": "/Cocomo/static/js/main.1b83be54.chunk.js.map",
+    "runtime-main.js": "/Cocomo/static/js/runtime-main.ad8c344a.js",
+    "runtime-main.js.map": "/Cocomo/static/js/runtime-main.ad8c344a.js.map",
+    "static/css/2.a2026422.chunk.css": "/Cocomo/static/css/2.a2026422.chunk.css",
+    "static/js/2.6a8d44dc.chunk.js": "/Cocomo/static/js/2.6a8d44dc.chunk.js",
+    "static/js/2.6a8d44dc.chunk.js.map": "/Cocomo/static/js/2.6a8d44dc.chunk.js.map",
+    "index.html": "/Cocomo/index.html",
+    "precache-manifest.f224fd852ef73e9542320236cbecaae3.js": "/Cocomo/precache-manifest.f224fd852ef73e9542320236cbecaae3.js",
+    "service-worker.js": "/Cocomo/service-worker.js",
+    "static/css/2.a2026422.chunk.css.map": "/Cocomo/static/css/2.a2026422.chunk.css.map",
+    "static/css/main.d7f82884.chunk.css.map": "/Cocomo/static/css/main.d7f82884.chunk.css.map",
+    "static/js/2.6a8d44dc.chunk.js.LICENSE.txt": "/Cocomo/static/js/2.6a8d44dc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ad8c344a.js",
+    "static/css/2.a2026422.chunk.css",
+    "static/js/2.6a8d44dc.chunk.js",
+    "static/css/main.d7f82884.chunk.css",
+    "static/js/main.1b83be54.chunk.js"
+  ]
+}
