@@ -15,28 +15,28 @@ export const Nav = () => {
       selectedKeys={[pathname]}
       mode="horizontal"
     >
-      <Item >
+      <Item key = "/">
         <Link to="/">
           <QuestionCircleOutlined />
           About
         </Link>
       </Item>
 
-      <Item >
+      <Item key = "/calc1">
         <Link to="/calc1">
           <CalculatorOutlined />
           Basic COCOMO
         </Link>
       </Item>
 
-      <Item >
+      <Item key = "/calc2">
         <Link to="/calc2">
           <CalculatorOutlined />
           Intermediate COCOMO
         </Link>
       </Item>
 
-      <Item >
+      <Item key = "/calc3">
         <Link to="/calc3">
           <CalculatorOutlined />
           Early Design COCOMOII
@@ -44,7 +44,7 @@ export const Nav = () => {
       </Item>
 
 
-      <Item >
+      <Item key = "/calc4">
         <Link to="/calc4">
           <CalculatorOutlined />
           Post Architecture COCOMOII
