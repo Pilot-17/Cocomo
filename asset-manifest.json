@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Cocomo/static/css/main.d7f82884.chunk.css",
-    "main.js": "/Cocomo/static/js/main.6874e25c.chunk.js",
-    "main.js.map": "/Cocomo/static/js/main.6874e25c.chunk.js.map",
+    "main.js": "/Cocomo/static/js/main.34c51235.chunk.js",
+    "main.js.map": "/Cocomo/static/js/main.34c51235.chunk.js.map",
     "runtime-main.js": "/Cocomo/static/js/runtime-main.ad8c344a.js",
     "runtime-main.js.map": "/Cocomo/static/js/runtime-main.ad8c344a.js.map",
     "static/css/2.a2026422.chunk.css": "/Cocomo/static/css/2.a2026422.chunk.css",
     "static/js/2.10631199.chunk.js": "/Cocomo/static/js/2.10631199.chunk.js",
     "static/js/2.10631199.chunk.js.map": "/Cocomo/static/js/2.10631199.chunk.js.map",
     "index.html": "/Cocomo/index.html",
-    "precache-manifest.c3e8a33cc79d45c4c9db5f379574e253.js": "/Cocomo/precache-manifest.c3e8a33cc79d45c4c9db5f379574e253.js",
+    "precache-manifest.781f6ed6354f460aa5136f863c0b1025.js": "/Cocomo/precache-manifest.781f6ed6354f460aa5136f863c0b1025.js",
     "service-worker.js": "/Cocomo/service-worker.js",
     "static/css/2.a2026422.chunk.css.map": "/Cocomo/static/css/2.a2026422.chunk.css.map",
     "static/css/main.d7f82884.chunk.css.map": "/Cocomo/static/css/main.d7f82884.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.a2026422.chunk.css",
     "static/js/2.10631199.chunk.js",
     "static/css/main.d7f82884.chunk.css",
-    "static/js/main.6874e25c.chunk.js"
+    "static/js/main.34c51235.chunk.js"
   ]
 }
