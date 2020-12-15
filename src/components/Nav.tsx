@@ -39,7 +39,7 @@ export const Nav = () => {
       <Item >
         <Link to="/calc3">
           <CalculatorOutlined />
-          COCOMOII(предварительная оценка)
+          Early Design COCOMOII
         </Link>
       </Item>
 
@@ -47,7 +47,7 @@ export const Nav = () => {
       <Item >
         <Link to="/calc4">
           <CalculatorOutlined />
-          COCOMOII(детальная оценка)
+          Post Architecture COCOMOII
         </Link>
       </Item>
 
