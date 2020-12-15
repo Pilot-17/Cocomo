@@ -13,10 +13,10 @@ export const App = () => (
       <Route exact path="/">
         <About />
       </Route>
-      <Route exact path="/calcbasic">
+      <Route exact path="/calc1">
         <CocomoBasic />
       </Route>
-      <Route exact path="/calc">
+      <Route exact path="/calc2">
         <Cocomo />
       </Route>
       <Route exact path="/calc3">
@@ -25,9 +25,9 @@ export const App = () => (
       <Route exact path="/calc4">
         <Cocomo2Advance />
       </Route>
-      <Route path="*">
+      {/* <Route path="*">
         <NoResult />
-      </Route>
+      </Route> */}
     </Switch>
   </Router>
 );

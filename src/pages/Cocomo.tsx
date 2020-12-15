@@ -18,7 +18,7 @@ export const Cocomo = () => {
     <Wrapper>
       <InputContainer>
         <label>
-          тип проекта
+          Тип проекта
           <Select
             style={{ margin: "12px", width: "200px" }}
             value={team}
@@ -31,7 +31,7 @@ export const Cocomo = () => {
           </Select>
         </label>
         <label>
-          и нам нужно написать
+          Нам нужно написать
           <InputNumber
             value={KLoC}
             onChange={(num) => setKLoC(Number(num))}
@@ -43,13 +43,13 @@ export const Cocomo = () => {
       </InputContainer>
       <hr />
 
-      <HideBar>
+      {/* <HideBar>
         <Panel header="Таблица коэффициентов" key="1">
           <CoefficientTable />
         </Panel>
       </HideBar>
 
-      <hr />
+      <hr /> */}
 
       <IntermediateCocomo team={team} KLoC={KLoC} />
     </Wrapper>

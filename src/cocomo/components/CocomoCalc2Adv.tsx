@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { ratingFactor, costDrivers, calculateIntermediateCocomo, calculateCocomo2, costDriversCocomo2, calculateCocomo2Advance } from "cocomo";
+import { ratingFactor, costDrivers, calculateIntermediateCocomo, calculateCocomo2, costDriversCocomo2, calculateCocomo2Advance, ResultColumn } from "cocomo";
 import styled from "styled-components";
 import { RadioGroup, RadioGroupCocomo2 } from "components";
 import useMediaQuery from "react-use-media-query-hook";
@@ -15,8 +15,8 @@ const InitialValue: ratingFactorCocomo2Advance = {
   a7:   3, 
   a8:   3, 
   a9:   3, 
-  a10:   3, 
-  a11:   3,   
+  a10:  3, 
+  a11:  3,   
   a12:  3, 
   a13:  3,
   a14:  3,
@@ -81,10 +81,10 @@ export const CocomoCalc2Advance: React.FC<Cocomo2PropsAdvance> = ({ KLoC }) => {
 
   return (
     <>
-      <Res>
-        <h3>{Round(res)}</h3>
-        <div className="label">Трудоемкость в человеко-месяцах</div>
-      </Res>
+    <Grid1>
+      <ResultColumn title={Round(res.PM)} label="Трудоемкость(PM), чел.× мес" />
+      <ResultColumn title={Round(res.TM)} label="Время разработки(TM), мес" />
+    </Grid1>
 
       <hr />
 
@@ -173,4 +173,23 @@ const Columns = styled.div`
     height: 32px;
   }
 `;
+
+export const Grid1 = styled.div`
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    & > :not(:last-child) {
+      border-right: 1px solid var(--input-placeholder, #ced6e0);
+    }
+  }
+
+  @media (max-width: 599px) {
+    margin: -20px 0;
+    & > :not(:last-child) {
+      border-bottom: 1px solid var(--input-placeholder, #ced6e0);
+    }
+  }
+`;
+
 const Round = (value: number) => (value == 0 ? 0 : Number(value).toFixed(2));

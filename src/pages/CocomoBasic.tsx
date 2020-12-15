@@ -18,7 +18,7 @@ export const CocomoBasic = () => {
     <Wrapper>
       <InputContainer>
         <label>
-          тип проекта
+          Тип проекта
           <Select
             style={{ margin: "12px", width: "200px" }}
             value={team}
@@ -31,7 +31,7 @@ export const CocomoBasic = () => {
           </Select>
         </label>
         <label>
-          и нам нужно написать
+          Нам нужно написать
           <InputNumber
             value={KLoC}
             onChange={(num) => setKLoC(Number(num))}

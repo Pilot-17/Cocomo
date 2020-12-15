@@ -20,15 +20,15 @@ export const Nav = () => {
         </Link>
       </Item>
 
-      <Item key="/calcbasic">
-        <Link to="/calcbasic">
+      <Item key="/calc1">
+        <Link to="/calc1">
           <CalculatorOutlined />
           Basic COCOMO
         </Link>
       </Item>
 
-      <Item key="/calc">
-        <Link to="/calc">
+      <Item key="/calc2">
+        <Link to="/calc2">
           <CalculatorOutlined />
           Intermediate COCOMO
         </Link>

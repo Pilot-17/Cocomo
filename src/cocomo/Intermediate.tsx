@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { ratingFactor, costDrivers, calculateIntermediateCocomo } from "cocomo";
+import { ratingFactor, costDrivers, calculateIntermediateCocomo, ResultColumn } from "cocomo";
 import styled from "styled-components";
 import { RadioGroup } from "components";
 import useMediaQuery from "react-use-media-query-hook";
@@ -68,10 +68,10 @@ export const IntermediateCocomo: React.FC<IntermediateCocomoProps> = ({
 
   return (
     <>
-      <Res>
-        <h3>{Round(res)}</h3>
-        <div className="label">Трудоемкость в человеко-месяцах</div>
-      </Res>
+    <Grid1>
+      <ResultColumn title={Round(res.PM)} label="Трудоемкость(PM), чел.× мес" />
+      <ResultColumn title={Round(res.TM)} label="Время разработки(TM), мес" />
+    </Grid1>
 
       <hr />
 
@@ -112,6 +112,24 @@ export const IntermediateCocomo: React.FC<IntermediateCocomoProps> = ({
     </>
   );
 };
+
+export const Grid1 = styled.div`
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    & > :not(:last-child) {
+      border-right: 1px solid var(--input-placeholder, #ced6e0);
+    }
+  }
+
+  @media (max-width: 599px) {
+    margin: -20px 0;
+    & > :not(:last-child) {
+      border-bottom: 1px solid var(--input-placeholder, #ced6e0);
+    }
+  }
+`;
 
 const Grid = styled.div`
   display: grid;

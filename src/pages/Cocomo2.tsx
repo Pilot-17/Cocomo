@@ -16,7 +16,7 @@ export const Cocomo2 = () => {
     <Wrapper>
       <InputContainer>
         <label>
-          нам нужно написать
+          Нам нужно написать
           <InputNumber
             value={KLoC}
             onChange={(num) => setKLoC(Number(num))}

@@ -68,7 +68,18 @@ export const calculateIntermediateCocomo = (
 
   const RFT: number = values.reduce(Multiply, 1);
 
-  return ai * KLoC ** bi * RFT;
+  const PM = ai * KLoC ** bi * RFT;
+
+  const coefficients = getMode(team);
+  const TM = coefficients.cb * PM ** coefficients.db
+
+  // 𝑷𝑴 = 𝒂𝒊 × (𝑺𝑰𝒁𝑬)𝒃𝒊,
+  // 𝑻𝑴 = 𝒄𝒊 × (𝑷𝑴)𝒅𝒊,
+  
+  return {
+    PM: PM,
+    TM: TM
+  }
 };
 
 const Multiply = (total: number, value: number) => total * value;
@@ -80,31 +91,28 @@ export const calculateCocomo2 = (
   KLoC: number,
   drivers: ratingFactorCocomo2
 ) => {
-
   const values = Object.entries(drivers).map(
     ([key, value]) => costDriversCocomo2[key][value-1]
   );
-
-  console.log(drivers)
-  console.log(values)
-  
   const RFT: number = values.slice(0, 7).reduce(Multiply, 1);
-
+  const RFT1: number = values.slice(0, 6).reduce(Multiply, 1);
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const SF: number = values.slice(7).reduce(reducer);
   console.log(SF)
-
   const SIZE = KLoC
-
   const A = 2.94
-  const E = 0.91 + (0.01 * SF)
+  const B = 0.91
+  const E = B + (0.01 * SF)
   const EAF = RFT
-
+  const EAF1 = RFT1
   const PM = EAF*A*(Math.pow(SIZE,E))
-  // console.log(Math.pow(SIZE,E))
-  // console.log(SIZE)
-  // console.log(E)
-  return PM
+  const PMforTM = EAF1*A*(Math.pow(SIZE,E))
+  const SCED = drivers.sced
+  const TM = SCED * 3.67 * (Math.pow(PMforTM,(0.28 + 0.2*(E-B))))
+  return {
+    PM: PM,
+    TM: TM
+  }
 };
 
 export const calculateCocomo2Advance = (
@@ -115,22 +123,19 @@ export const calculateCocomo2Advance = (
   const values1 = Object.entries(drivers).map(
     ([key, value]) => costDriversCocomo2Advance[key][value-1]
   );
-  console.log(drivers)
-  console.log(values1)
-
-  const RFT: number = values1.slice(0, 17).reduce(Multiply, 1);
-
+  const RFT: number = values1.slice(0, 16).reduce(Multiply, 1);
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   const SF: number = values1.slice(17).reduce(reducer);
-  console.log(SF)
-
   const SIZE = KLoC
-
+  const B = 0.91
   const A = 2.45
-  const E = 0.91 + (0.01 * SF)
+  const E = B + (0.01 * SF)
   const EAF = RFT
-
   const PM = EAF*A*(Math.pow(SIZE,E))
-
-  return PM
+  const SCED = drivers.a17
+  const TM = SCED * 3.67 * (Math.pow(PM,0.28 + 0.2*(E-B)))
+  return {
+    PM: PM,
+    TM: TM
+  }
 };
