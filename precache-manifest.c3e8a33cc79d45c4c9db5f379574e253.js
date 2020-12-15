@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5d137476a7f147790a38d3b034d39dc2",
+    "revision": "fbaf55909e105d344eb9dd7b55f5f488",
     "url": "/Cocomo/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Cocomo/static/css/2.a2026422.chunk.css"
   },
   {
-    "revision": "99238ee81b533f1f410a",
+    "revision": "1d3e7e9b30aca8ae3a62",
     "url": "/Cocomo/static/css/main.d7f82884.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Cocomo/static/js/2.10631199.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "99238ee81b533f1f410a",
-    "url": "/Cocomo/static/js/main.d4e271f6.chunk.js"
+    "revision": "1d3e7e9b30aca8ae3a62",
+    "url": "/Cocomo/static/js/main.6874e25c.chunk.js"
   },
   {
     "revision": "7200166597b4656d398f",
