@@ -7,7 +7,8 @@ import { Cocomo2 } from "pages/Cocomo2";
 import { Cocomo2Advance } from "pages/Cocomo2Advance";
 
 export const App = () => (
-  <HashRouter basename='/'>
+  // <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter >
     <Nav />
     <Switch>
       <Route exact path="/">

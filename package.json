@@ -1,7 +1,7 @@
 {
   "name": "cocomo",
   "version": "1.0.1",
-  "homepage": "https://pilot-17.github.io/Cocomo",
+  "homepage": "https://pilot-17.github.io/Cocomo/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
