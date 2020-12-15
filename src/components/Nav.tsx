@@ -9,32 +9,34 @@ export const Nav = () => {
 
   return (
     <Menu
-      style={{ padding: "0 2vw" }}
+      style={{ 
+        padding: "0 5vw"
+    }}
       selectedKeys={[pathname]}
       mode="horizontal"
     >
-      <Item key="/">
+      <Item >
         <Link to="/">
           <QuestionCircleOutlined />
           About
         </Link>
       </Item>
 
-      <Item key="/calc1">
+      <Item >
         <Link to="/calc1">
           <CalculatorOutlined />
           Basic COCOMO
         </Link>
       </Item>
 
-      <Item key="/calc2">
+      <Item >
         <Link to="/calc2">
           <CalculatorOutlined />
           Intermediate COCOMO
         </Link>
       </Item>
 
-      <Item key="/calc3">
+      <Item >
         <Link to="/calc3">
           <CalculatorOutlined />
           COCOMOII(предварительная оценка)
@@ -42,7 +44,7 @@ export const Nav = () => {
       </Item>
 
 
-      <Item key="/calc4">
+      <Item >
         <Link to="/calc4">
           <CalculatorOutlined />
           COCOMOII(детальная оценка)

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, HashRouter, Route, Switch } from "react-router-dom";
 import { About, Cocomo, NoResult } from "pages";
 import { Nav } from "./components/Nav";
 import { CocomoBasic } from "pages/CocomoBasic";
@@ -7,7 +7,7 @@ import { Cocomo2 } from "pages/Cocomo2";
 import { Cocomo2Advance } from "pages/Cocomo2Advance";
 
 export const App = () => (
-  <Router>
+  <HashRouter basename='/'>
     <Nav />
     <Switch>
       <Route exact path="/">
@@ -29,5 +29,5 @@ export const App = () => (
         <NoResult />
       </Route> */}
     </Switch>
-  </Router>
+    </HashRouter>
 );
