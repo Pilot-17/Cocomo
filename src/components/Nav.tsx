@@ -15,8 +15,8 @@ export const Nav = () => {
       selectedKeys={[pathname]}
       mode="horizontal"
     >
-      <Item key = "/about">
-        <Link to="/about">
+      <Item key = "/">
+        <Link to="/">
           <QuestionCircleOutlined />
           About
         </Link>

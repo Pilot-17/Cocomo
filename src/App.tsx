@@ -11,7 +11,7 @@ export const App = () => (
     <HashRouter >
     <Nav />
     <Switch>
-      <Route exact path="/about">
+      <Route exact path="/">
         <About />
       </Route>
       <Route exact path="/calc1">
