@@ -1,5 +1,14 @@
 import React, { useState, useMemo } from "react";
-import { ratingFactor, costDrivers, calculateIntermediateCocomo, calculateCocomo2, costDriversCocomo2, calculateCocomo2Advance, ResultColumn } from "cocomo";
+import {
+  ratingFactor,
+  costDrivers,
+  calculateIntermediateCocomo,
+  calculateCocomo2,
+  costDriversCocomo2,
+  calculateCocomo2Advance,
+  ResultColumn,
+  Name
+} from "cocomo";
 import styled from "styled-components";
 import { RadioGroup, RadioGroupCocomo2 } from "components";
 import useMediaQuery from "react-use-media-query-hook";
@@ -7,26 +16,26 @@ import { costDriversCocomo2Advance, ratingFactorCocomo2, ratingFactorCocomo2Adva
 
 const InitialValue: ratingFactorCocomo2Advance = {
   a1:   3,
-  a2:   3,  
-  a3:   3,  
-  a4:   3,  
-  a5:   3,  
+  a2:   3,
+  a3:   3,
+  a4:   3,
+  a5:   3,
   a6:   3,
-  a7:   3, 
-  a8:   3, 
-  a9:   3, 
-  a10:  3, 
-  a11:  3,   
-  a12:  3, 
+  a7:   3,
+  a8:   3,
+  a9:   3,
+  a10:  3,
+  a11:  3,
+  a12:  3,
   a13:  3,
   a14:  3,
-  a15:  3, 
-  a16:  3, 
+  a15:  3,
+  a16:  3,
   a17:  3,
-  a18:  3, 
-  a19:  3,  
+  a18:  3,
+  a19:  3,
   a20:  3,
-  a21:  3,  
+  a21:  3,
   a22:  3,
 };
 
@@ -67,7 +76,7 @@ const driversKeys = [
 interface Cocomo2PropsAdvance { KLoC: number }
 
 export const CocomoCalc2Advance: React.FC<Cocomo2PropsAdvance> = ({ KLoC }) => {
-  
+
   const [drivers, setDrivers] = useState(InitialValue);
   const isMobile = useMediaQuery("(max-width: 400px)");
 
@@ -110,8 +119,38 @@ export const CocomoCalc2Advance: React.FC<Cocomo2PropsAdvance> = ({ KLoC }) => {
         )}
       </Columns>
 
-      <Grid>
+      <>
         {driversKeys.map(({ key, text }) => (
+            <>
+
+              {(() => {
+                if (key === "a1") {
+                  return (
+                      <Name>Характеристики персонала</Name>
+                  )
+                } else if (key === "a7") {
+                  return (
+                      <Name>Параметры продукта</Name>
+                  )
+                } else if (key === "a12") {
+                  return (
+                      <Name>Параметры платформы</Name>
+                  )
+                } else if (key === "a15") {
+                  return (
+                      <Name>Параметры проекта</Name>
+                  )
+                } else if (key === "a18") {
+                  return (
+                      <Name>Факторы масштаба</Name>
+                  )
+
+                }
+              })()}
+
+
+
+            <Grid>
           <RadioGroup
             title={text}
             selectRadio={handleUpdate}
@@ -120,8 +159,10 @@ export const CocomoCalc2Advance: React.FC<Cocomo2PropsAdvance> = ({ KLoC }) => {
             group={key}
             key={key}
           />
+            </Grid>
+            </>
         ))}
-      </Grid>
+      </>
     </>
   );
 };

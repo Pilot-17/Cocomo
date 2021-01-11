@@ -1,5 +1,13 @@
 import React, { useState, useMemo } from "react";
-import { ratingFactor, costDrivers, calculateIntermediateCocomo, calculateCocomo2, costDriversCocomo2, ResultColumn } from "cocomo";
+import {
+  ratingFactor,
+  costDrivers,
+  calculateIntermediateCocomo,
+  calculateCocomo2,
+  costDriversCocomo2,
+  ResultColumn,
+  Name
+} from "cocomo";
 import styled from "styled-components";
 import { RadioGroup, RadioGroupCocomo2 } from "components";
 import useMediaQuery from "react-use-media-query-hook";
@@ -45,7 +53,7 @@ const driversKeys = [
 interface Cocomo2Props { KLoC: number }
 
 export const CocomoCalc2: React.FC<Cocomo2Props> = ({ KLoC }) => {
-  
+
   const [drivers, setDrivers] = useState(InitialValue);
   const isMobile = useMediaQuery("(max-width: 400px)");
 
@@ -98,8 +106,36 @@ export const CocomoCalc2: React.FC<Cocomo2Props> = ({ KLoC }) => {
         )}
       </Columns>
 
-      <Grid>
+
         {driversKeys.map(({ key, text }) => (
+            <>
+
+              {(() => {
+                if (key === "pers") {
+                  return (
+                      <Name>Характеристики персонала</Name>
+                  )
+                } else if (key === "rcpx") {
+                  return (
+                      <Name>Параметры продукта</Name>
+                  )
+                } else if (key === "pdif") {
+                  return (
+                      <Name>Параметры платформы</Name>
+                  )
+                } else if (key === "fcil") {
+                  return (
+                      <Name>Параметры проекта</Name>
+                  )
+                } else if (key === "prec") {
+                  return (
+                      <Name>Факторы масштаба</Name>
+                  )
+
+                }
+              })()}
+
+            <Grid>
           <RadioGroupCocomo2
             title={text}
             selectRadio={handleUpdate}
@@ -108,8 +144,10 @@ export const CocomoCalc2: React.FC<Cocomo2Props> = ({ KLoC }) => {
             group={key}
             key={key}
           />
+            </Grid>
+            </>
         ))}
-      </Grid>
+
     </>
   );
 };

@@ -3,6 +3,7 @@ import { ratingFactor, costDrivers, calculateIntermediateCocomo, ResultColumn } 
 import styled from "styled-components";
 import { RadioGroup } from "components";
 import useMediaQuery from "react-use-media-query-hook";
+import { Typography } from 'antd';
 
 const InitialValue: ratingFactor = {
   reliability: 3,
@@ -97,21 +98,52 @@ export const IntermediateCocomo: React.FC<IntermediateCocomoProps> = ({
         )}
       </Columns>
 
-      <Grid>
+
+
         {driversKeys.map(({ key, text }) => (
-          <RadioGroup
-            title={text}
-            selectRadio={handleUpdate}
-            value={drivers[key]}
-            radioValues={costDrivers[key]}
-            group={key}
-            key={key}
-          />
+            <>
+              {(() => {
+                if (key === "reliability") {
+                  return (
+                        <Name>Характеристики продукта</Name>
+                  )
+                } else if (key === "performanceConstraints") {
+                  return (
+                        <Name>Характеристики аппаратного обеспечения</Name>
+                  )
+                } else if (key === "analystCapability") {
+                  return (
+                        <Name>Характеристики персонала</Name>
+                  )
+                } else if (key === "applicationMethods") {
+                  return (
+                        <Name>Характеристики проекта</Name>
+                  )
+
+                }
+              })()}
+
+              <Grid>
+              <RadioGroup
+                  title={text}
+                  selectRadio={handleUpdate}
+                  value={drivers[key]}
+                  radioValues={costDrivers[key]}
+                  group={key}
+                  key={key}
+              />
+              </Grid>
+
+            </>
         ))}
-      </Grid>
+
     </>
   );
 };
+
+export const Name = styled.h6`
+text-align: center;
+`;
 
 export const Grid1 = styled.div`
   display: grid;
