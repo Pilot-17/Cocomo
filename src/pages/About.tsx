@@ -179,7 +179,7 @@ export const About: React.FC = () => {
         <div>
         MIT License <br/><br/>
 
-Copyright (c) 2020 TUSUR <br/><br/>
+Copyright (c) 2020 Кульбаев А. Б. <br/><br/>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
